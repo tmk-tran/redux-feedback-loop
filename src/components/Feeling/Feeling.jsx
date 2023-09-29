@@ -14,117 +14,78 @@ export default function Feeling() {
       <CardContent>
         <Typography variant="h6">How are you feeling today?</Typography>
         <form>
-            <Typography variant="h6">On a scale from 1-5:</Typography>
-          {/* <TextField
-            label="Feeling"
-            variant="outlined"
-            type="number"
-            style={{ width: "10%" }}
-            inputProps={{ min: 1, max: 5, step: 1 }}
-            margin="normal"
-          /> */}
-          <div classNmae="radio">
-            {/* 1
-            <input
-              type="radio"
-              name="feeling"
-              value="1"
-              //   checked={newDeliveryMethod === "Delivery"}
-              //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-            />
-            2
-            <input
-              type="radio"
-              name="feeling"
-              value="2"
-              //   checked={newDeliveryMethod === "Delivery"}
-              //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-            />
-            3
-            <input
-              type="radio"
-              name="feeling"
-              value="3"
-              //   checked={newDeliveryMethod === "Delivery"}
-              //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-            />
-            4
-            <input
-              type="radio"
-              name="feeling"
-              value="4"
-              //   checked={newDeliveryMethod === "Delivery"}
-              //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-            />
-            5
-            <input
-              type="radio"
-              name="feeling"
-              value="5"
-              //   checked={newDeliveryMethod === "Delivery"}
-              //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-            /> */}
-            <table>
-  <thead>
-    <tr>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <input
-          type="radio"
-          name="feeling"
-          value="1"
-          //   checked={newDeliveryMethod === "Delivery"}
-          //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-        />
-      </td>
-      <td>
-        <input
-          type="radio"
-          name="feeling"
-          value="2"
-          //   checked={newDeliveryMethod === "Delivery"}
-          //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-        />
-      </td>
-      <td>
-        <input
-          type="radio"
-          name="feeling"
-          value="3"
-          //   checked={newDeliveryMethod === "Delivery"}
-          //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-        />
-      </td>
-      <td>
-        <input
-          type="radio"
-          name="feeling"
-          value="4"
-          //   checked={newDeliveryMethod === "Delivery"}
-          //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-        />
-      </td>
-      <td>
-        <input
-          type="radio"
-          name="feeling"
-          value="5"
-          //   checked={newDeliveryMethod === "Delivery"}
-          //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
-        />
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <Typography variant="h6">On a scale from 1-5:</Typography>
+          <br />
+          <br />
+          <div className="radio">
+            <table className="radio-table">
+              <thead>
+                <tr>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="radio"
+                      name="feeling"
+                      value="1"
+                      id="input"
+                      //   checked={newDeliveryMethod === "Delivery"}
+                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="feeling"
+                      value="2"
+                      id="input"
+                      //   checked={newDeliveryMethod === "Delivery"}
+                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="feeling"
+                      value="3"
+                      id="input"
+                      //   checked={newDeliveryMethod === "Delivery"}
+                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="feeling"
+                      value="4"
+                      id="input"
+                      //   checked={newDeliveryMethod === "Delivery"}
+                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="feeling"
+                      value="5"
+                      id="input"
+                      //   checked={newDeliveryMethod === "Delivery"}
+                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <br />
+          <br />
           <Button variant="contained" color="primary" fullWidth>
             Next
           </Button>

@@ -1,10 +1,29 @@
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    height: 10px;
-    width: 10px;
+  height: 10px;
+  width: 10px;
 }
 
-.radio {
-    display: flex;
-    justify-content: space-between;
+th {
+    font-size: 24px;
+}
+
+.radio-table {
+  border-collapse: separate;
+  border-spacing: 40px; /* Adjust the spacing as needed */
+}
+
+.radio-table td {
+  border: 1px solid #ccc; /* Add a border to separate cells visually */
+  border-radius: 50%;
+  padding: 5px;
+  background-color: rgb(62, 72, 217);
+}
+
+.radio-table input[type="radio"] {
+  margin: 0; /* Remove any default margin on radio buttons */
+}
+
+.radio-table td:hover {
+    background-color: rgb(20, 195, 101);
 }

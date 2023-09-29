@@ -5,14 +5,14 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-export default function Feeling() {
+export default function Understanding() {
   return (
     <Card variant="outlined">
       <CardContent>
-        <Typography variant="h6">How are you feeling today?</Typography>
+        <Typography variant="h6">How well are you being supported?</Typography>
         <form>
           <TextField
-            label="Feeling"
+            label="Support"
             variant="outlined"
             fullWidth
             margin="normal"

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./Feeling.css";
 
@@ -10,7 +9,7 @@ export default function Feeling() {
   const [feeling, setFeeling] = React.useState("");
 
   return (
-    <Card variant="outlined">
+    <Card className="card" variant="outlined">
       <CardContent>
         <Typography variant="h6">How are you feeling today?</Typography>
         <form>
@@ -86,7 +85,7 @@ export default function Feeling() {
           </div>
           <br />
           <br />
-          <Button variant="contained" color="primary" fullWidth>
+          <Button variant="contained" color="primary" fullWidth style={{ padding: "20px" }}>
             Next
           </Button>
         </form>

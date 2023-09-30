@@ -16,6 +16,7 @@ th {
 .radio-table td {
   border: 1px solid #ccc; /* Add a border to separate cells visually */
   border-radius: 50%;
+  width: 1rem;
   padding: 5px;
   background-color: rgb(62, 72, 217);
 }
@@ -26,4 +27,12 @@ th {
 
 .radio-table td:hover {
     background-color: rgb(20, 195, 101);
+}
+
+#input {
+    margin-left: 2px;
+}
+
+.card {
+    margin: 25px;
 }

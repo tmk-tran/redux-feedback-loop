@@ -5,6 +5,10 @@
     padding: 10px;
 }
 
+.review-head {
+    text-align: center;
+}
+
 .review-info {
     display: flex;
     justify-content: center;
@@ -23,7 +27,7 @@
 
 #response {
     text-align: center;
-    width: 300px;
+    width: 150px;
     font-weight: bold;
     font-family: Trebuchet MS;
 }
@@ -31,6 +35,10 @@
 #section {
     font-weight: bold;
     font-family: Trebuchet MS;
-    width: 125px;
+    width: 100px;
     background-color: rgb(194, 194, 253);
+}
+
+.above-submit {
+    text-align: center;
 }

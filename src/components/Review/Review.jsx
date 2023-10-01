@@ -42,7 +42,10 @@ export default function Review() {
   return (
     <Card className="card" variant="outlined">
       <CardContent>
-        <Typography variant="h6">Please review your feedback:</Typography>
+        <Typography className="review-head" variant="h3">
+          Review
+        </Typography>
+        <br />
         <div className="review-info">
           <table className="review-table">
             <thead>
@@ -71,6 +74,23 @@ export default function Review() {
             </tbody>
           </table>
         </div>
+        <Typography
+          className="above-submit"
+          variant="body1"
+          color="text.secondary"
+          component="p"
+        >
+          Everything look good?
+        </Typography>
+        <Typography
+          className="above-submit"
+          variant="body2"
+          color="text.secondary"
+          component="p"
+        >
+          Submit your feedback below!
+        </Typography>
+        <br />
         <Button
           onClick={submitForm}
           variant="contained"

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   HashRouter as Router,
   Route,
@@ -18,12 +19,47 @@ import Comments from "../Comments/Comments";
 import SuccessPage from "../SuccessPage/SuccessPage";
 
 function App() {
+  const [feedbackList, setFeedbackList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getFeedback();
+  }, []);
+
+  const getFeedback = () => {
+    axios
+      .get("/form")
+      .then((res) => {
+        setFeedbackList(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  };
+
+  const deleteFeedback = (id) => {
+    axios
+      .delete("/form/${id}")
+      .then((res) => {
+        // Update the feedbackList state by filtering out the deleted feedback
+        setFeedbackList((prevList) =>
+          prevList.filter((item) => item.id !== id)
+        );
+      })
+      .catch((err) => {
+        console.log("Error deleting feedback", err);
+      });
+  };
+
   return (
     <Router>
       <Header />
       <Switch>
         <Route exact path="/admin">
-          <Admin />
+          <Admin feedbackList={feedbackList} loading={loading} error={error} deleteFeedback={deleteFeedback} />
         </Route>
         <Route exact path="/">
           <StartPage />

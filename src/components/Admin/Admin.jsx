@@ -1,32 +1,8 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "./Admin.css";
 
-export default function Admin() {
-  const [feedbackList, setFeedbackList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const source = axios.CancelToken.source();
-
-  useEffect(() => {
-    // update axios to below, there was a memory leak previously
-    axios
-      .get("/form", {
-        cancelToken: source.token,
-      })
-      .then((res) => {
-        setFeedbackList(res.data);
-        setLoading(false); // Data loaded, set loading to false
-      })
-      .catch((err) => {
-        if (axios.isCancel(err)) {
-          console.log("Request canceled:", err.message);
-        } else {
-          setError(err); // Set error state
-          setLoading(false); // Error occurred, set loading to false
-        }
-      });
-  }, []);
+export default function Admin({ feedbackList, loading, error, deleteFeedback }) {
+  //  HAD THE FOLLOWING HERE, BUT IT WAS CAUSING ERRORS, SO I MOVED IT TO APP COMPONENT
+  //  State, and an axios GET request
 
   // Render based on loading and error states
   if (loading) {
@@ -38,30 +14,64 @@ export default function Admin() {
   }
 
   return (
+    // HAD THIS FIRST, needed to change because of memory leak error on page load
+    // <div>
+    //   <h1>Welcome to Admin</h1>
+    //   <table className="admin-table">
+    //     <thead className="admin-head">
+    //       <tr>
+    //         <th>ID</th>
+    //         <th>Feeling</th>
+    //         <th>Understanding</th>
+    //         <th>Support</th>
+    //         <th>Comments</th>
+    //       </tr>
+    //     </thead>
+    //     <tbody>
+    //       {feedbackList.map((feedback) => (
+    //         <tr key={feedback.id}>
+    //           <td id="id">{feedback.id}</td>
+    //           <td>{feedback.feeling}</td>
+    //           <td>{feedback.understanding}</td>
+    //           <td>{feedback.support}</td>
+    //           <td>{feedback.comments}</td>
+    //         </tr>
+    //       ))}
+    //     </tbody>
+    //   </table>
+    // </div>
     <div>
-      <h1>Welcome to Admin, bruh</h1>
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>Response ID</th>
-            <th>Feeling</th>
-            <th>Understanding</th>
-            <th>Support</th>
-            <th>Comments</th>
-          </tr>
-        </thead>
-        <tbody>
-          {feedbackList.map((feedback) => (
-            <tr key={feedback.id}>
-              <td>{feedback.id}</td>
-              <td>{feedback.feeling}</td>
-              <td>{feedback.understanding}</td>
-              <td>{feedback.support}</td>
-              <td>{feedback.comments}</td>
+      <h1 className="admin-h1">Welcome to Admin</h1>
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
+      {!loading && !error && (
+        <table className="admin-table">
+          <thead className="admin-head">
+            <tr>
+              <th>ID</th>
+              <th>Feeling</th>
+              <th>Understanding</th>
+              <th>Support</th>
+              <th>Comments</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {feedbackList.map((feedback) => (
+              <tr key={feedback.id}>
+                <td id="id">{feedback.id}</td>
+                <td>{feedback.feeling}</td>
+                <td>{feedback.understanding}</td>
+                <td>{feedback.support}</td>
+                <td>{feedback.comments}</td>
+                <td>
+                  <button onClick={deleteFeedback}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

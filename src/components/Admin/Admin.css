@@ -8,9 +8,24 @@
 .admin-table td {
     height: 25px;
     text-align: center;
+    background-color: ghostwhite;
+    padding: 5px;
 }
 
 .admin-table {
     margin: 0 auto;
-    width: 80%;
+}
+
+.admin-h1 {
+    text-align: center;
+}
+
+.admin-table th {
+    background-color: steelblue;
+    color: aliceblue;
+    font-size: smaller;
+}
+
+#id {
+    font-weight: bold;
 }

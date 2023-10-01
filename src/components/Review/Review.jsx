@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useSelector } from "react-redux";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -17,25 +18,26 @@ export default function Review() {
   console.log("IN REVIEW COMPONENT, data received:", supportData);
   console.log("IN REVIEW COMPONENT, data received:", commentsData);
 
-  let formData = [feelingData.feeling, understandingData.understanding, supportData.support, commentsData.comments];
-  console.log('FORM DATA CONTAINS: ', formData);
-
-  const submitOrder = () => {
-    let orderObject = {
-      customer_name: customer.name,
-      street_address: customer.address,
-      pizzas: cart.cart,
-      total: cart.totalPrice,
-      type: customer.DeliveryMethod,
-      city: customer.city,
-      zip: customer.zip,
+  const submitForm = () => {
+    let formData = {
+      feeling: feelingData.feeling,
+      understanding: understandingData.understanding,
+      support: supportData.support,
+      comments: commentsData.comments,
     };
 
-    axios.post("/api/order", orderObject).then((response) => {
-      console.log("post at api/order", response);
-    });
-  };
+    console.log("FORM DATA CONTAINS: ", formData);
 
+    // send form data to backend
+    axios
+      .post("/form", formData)
+      .then((response) => {
+        console.log("Sent to Server: ", response);
+      })
+      .catch((error) => {
+        console.log("Error sending: ", error);
+      });
+  };
 
   return (
     <Card className="card" variant="outlined">
@@ -69,7 +71,12 @@ export default function Review() {
             </tbody>
           </table>
         </div>
-        <Button variant="contained" color="primary" fullWidth>
+        <Button
+          onClick={submitForm}
+          variant="contained"
+          color="primary"
+          fullWidth
+        >
           Submit
         </Button>
       </CardContent>

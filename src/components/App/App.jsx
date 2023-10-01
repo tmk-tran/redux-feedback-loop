@@ -33,9 +33,7 @@ function App() {
         <Link className="link" to="/">
           Feeling
         </Link>
-        <Link to="/understanding">
-          Understanding
-        </Link>
+        <Link to="/understanding">Understanding</Link>
         <Link to="/support">Support</Link>
         <Link to="/comments">Comments</Link>
         <Link to="/review">Review</Link>

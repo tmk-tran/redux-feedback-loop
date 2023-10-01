@@ -87,6 +87,7 @@ function App() {
             feedbackList={feedbackList}
             loading={loading}
             error={error}
+            getFeedback={getFeedback}
             deleteFeedback={deleteFeedback}
           />
         </Route>

@@ -27,9 +27,6 @@ export default function Comments() {
     console.log("clicked NEXT");
 
     event.preventDefault();
-    if (comments === "") {
-      return alert("Please enter your response!");
-    }
 
     dispatch({
       type: "SET_COMMENTS",

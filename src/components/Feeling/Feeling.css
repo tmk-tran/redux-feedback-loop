@@ -18,7 +18,7 @@ th {
   border-radius: 50%;
   width: 1rem;
   padding: 5px;
-  background-color: rgb(62, 72, 217, .85);
+  background-color: rgba(84, 92, 215, 0.85);
 }
 
 .radio-table input[type="radio"] {
@@ -30,7 +30,9 @@ th {
 }
 
 #input {
-    margin-left: 2px;
+    margin: 2px 0 2px 2px;
+    height: 20px;
+    width: 20px;
 }
 
 .card {

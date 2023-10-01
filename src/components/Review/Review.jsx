@@ -17,6 +17,10 @@ export default function Review() {
   console.log("IN REVIEW COMPONENT, data received:", supportData);
   console.log("IN REVIEW COMPONENT, data received:", commentsData);
 
+  let formData = [feelingData.feeling, understandingData.understanding, supportData.support, commentsData.comments];
+  console.log('FORM DATA CONTAINS: ', formData);
+
+
   return (
     <Card className="card" variant="outlined">
       <CardContent>

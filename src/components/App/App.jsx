@@ -113,7 +113,7 @@ function App() {
           <SuccessPage />
         </Route>
       </Switch>
-      <Redirect to="/" /> {/* Default redirect to the first form */}
+      <Redirect to="/admin" /> {/* Default redirect to the first form */}
       <div className="nav">
         <Link to="/admin">Admin</Link>
         <Link to="/">Home</Link>

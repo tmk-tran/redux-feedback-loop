@@ -29,3 +29,11 @@
 #id {
     font-weight: bold;
 }
+
+.flagged-row {
+    background-color: yellow;
+}
+
+.flagged-row td {
+    background-color: transparent; /* added for ability to see the flagged row */
+}

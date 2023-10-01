@@ -22,11 +22,11 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/">
-          <StartPage />
-        </Route>
         <Route exact path="/admin">
           <Admin />
+        </Route>
+        <Route exact path="/">
+          <StartPage />
         </Route>
         <Route exact path="/feeling">
           <Feeling />

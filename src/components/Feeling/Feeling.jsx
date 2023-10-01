@@ -98,7 +98,6 @@ export default function Feeling() {
           variant="contained"
           color="primary"
           fullWidth
-          style={{ padding: "20px" }}
           onClick={handleSubmit}
         >
           Next

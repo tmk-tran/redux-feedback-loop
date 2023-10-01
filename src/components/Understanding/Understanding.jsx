@@ -69,6 +69,8 @@ export default function Understanding() {
           </div>
         </div>
         <Typography variant="h7">On a scale from 1-5:</Typography>
+        <br />
+        <br />
         <RadioGroup
           aria-label="gender"
           name="controlled-radio-buttons-group"

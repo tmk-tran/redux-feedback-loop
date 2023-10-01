@@ -59,18 +59,20 @@ export default function Support() {
             </Typography>
           </div>
           <div>
-          <Button
-            onClick={goBack}
-            className="topBtn"
-            variant="contained"
-            color="primary"
-            size="small"
-          >
-            Back
-          </Button>
+            <Button
+              onClick={goBack}
+              className="topBtn"
+              variant="contained"
+              color="primary"
+              size="small"
+            >
+              Back
+            </Button>
           </div>
         </div>
         <Typography variant="h7">On a scale from 1-5:</Typography>
+        <br />
+        <br />
         <RadioGroup
           aria-label="gender"
           name="controlled-radio-buttons-group"

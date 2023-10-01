@@ -52,17 +52,24 @@ export default function Comments() {
   return (
     <Card className="card" variant="outlined">
       <CardContent>
-        <Typography variant="h6">Any comments you want to leave?</Typography>
-        <br />
-        <Button
-          onClick={goBack}
-          className="topBtn"
-          variant="contained"
-          color="primary"
-          size="small"
-        >
-          Back
-        </Button>
+        <div className="top">
+          <div className="header">
+            <Typography variant="h6">
+              Any comments you want to leave?
+            </Typography>
+          </div>
+          <div>
+            <Button
+              onClick={goBack}
+              className="topBtn"
+              variant="contained"
+              color="primary"
+              size="small"
+            >
+              Back
+            </Button>
+          </div>
+        </div>
         <br />
         <br />
         <form>
@@ -86,4 +93,3 @@ export default function Comments() {
     </Card>
   );
 }
-

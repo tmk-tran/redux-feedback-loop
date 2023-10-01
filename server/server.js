@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("build"));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-const formRouter = require("./routes/formRouter");
+const formRouter = require("./routes/form.router");
 app.use("/form", formRouter);
 
 /** ---------- START SERVER ---------- **/

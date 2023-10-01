@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import Header from "../Header/Header";
 import "./App.css";
+import StartPage from "../StartPage/StartPage";
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
@@ -14,6 +15,9 @@ function App() {
     <Router>
       <Header />
       <Route exact path="/">
+        <StartPage />
+      </Route>
+      <Route exact path="/feeling">
         <Feeling />
       </Route>
       <Route exact path="/understanding">
@@ -33,9 +37,8 @@ function App() {
       </Route>
       <Redirect to="/" /> {/* Default redirect to the first form */}
       <div className="nav">
-        <Link className="link" to="/">
-          Feeling
-        </Link>
+        <Link to="/">Home</Link>
+        <Link to="/feeling">Feeling</Link>
         <Link to="/understanding">Understanding</Link>
         <Link to="/support">Support</Link>
         <Link to="/comments">Comments</Link>

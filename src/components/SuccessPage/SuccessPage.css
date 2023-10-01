@@ -3,10 +3,13 @@
     background-color: rgb(132, 157, 233);
     border-radius: 5px;
     font-family: system-ui;
+    border-radius: 10px;
 }
 
 .success-info {
     padding: 15px;
+    background-color: rgb(182, 176, 187);
+    border-radius: 10px;
 }
 
 .success-info h3 {

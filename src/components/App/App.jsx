@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { HashRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import Header from "../Header/Header";
 import "./App.css";
@@ -8,6 +7,7 @@ import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
 import Review from "../Review/Review";
 import Comments from "../Comments/Comments";
+import SuccessPage from "../SuccessPage/SuccessPage";
 
 function App() {
   return (
@@ -28,6 +28,9 @@ function App() {
       <Route exact path="/review">
         <Review />
       </Route>
+      <Route exact path="/success">
+        <SuccessPage />
+      </Route>
       <Redirect to="/" /> {/* Default redirect to the first form */}
       <div className="nav">
         <Link className="link" to="/">
@@ -37,6 +40,7 @@ function App() {
         <Link to="/support">Support</Link>
         <Link to="/comments">Comments</Link>
         <Link to="/review">Review</Link>
+        <Link to="/success">Success</Link>
       </div>
     </Router>
   );

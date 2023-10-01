@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+// copy first three lines for other components setup
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -11,7 +12,7 @@ import "./Understanding.css";
 export default function Understanding() {
   // bring in data fromm last component
   const feelingData = useSelector((state) => state.feelingReducer);
-  console.log("Feeling Data in Understanding component:", feelingData);
+  console.log("IN UNDERSTANDING COMPONENT, data received:", feelingData);
   // state for this component
   const [understanding, setUnderstanding] = useState("");
 
@@ -40,10 +41,11 @@ export default function Understanding() {
     setUnderstanding("");
   };
 
-  const goBack = () => { // need event prevent default here???
+  const goBack = () => {
+    // need event prevent default here???
     console.log("clicked BACK");
     history.push("/");
-  }
+  };
 
   return (
     <Card variant="outlined">
@@ -53,7 +55,7 @@ export default function Understanding() {
             How well are you understanding the content?
           </Typography>
           <Button
-            onClick={goBack}          
+            onClick={goBack}
             className="topBtn"
             variant="contained"
             color="primary"
@@ -70,7 +72,12 @@ export default function Understanding() {
             margin="normal"
             onChange={(event) => setUnderstanding(event.target.value)}
           />
-          <Button onClick={handleSubmit} variant="contained" color="primary" fullWidth>
+          <Button
+            onClick={handleSubmit}
+            variant="contained"
+            color="primary"
+            fullWidth
+          >
             Next
           </Button>
         </form>

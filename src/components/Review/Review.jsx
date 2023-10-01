@@ -18,33 +18,33 @@ export default function Review() {
   console.log("IN REVIEW COMPONENT, data received:", commentsData);
 
   return (
-    <Card variant="outlined">
+    <Card className="review-card" variant="outlined">
       <CardContent>
         <Typography variant="h6">Please review your feedback:</Typography>
         <div className="review-info">
           <table className="review-table">
             <thead>
               <tr>
-                <th>Section</th>
+                <th id="section-head">Section</th>
                 <th>Response</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Feeling</td>
-                <td>{feelingData.feeling}</td>
+                <td id="section">Feeling</td>
+                <td id="response">{feelingData.feeling}</td>
               </tr>
               <tr>
-                <td>Understanding</td>
-                <td>{understandingData.understanding}</td>
+                <td id="section">Understanding</td>
+                <td id="response">{understandingData.understanding}</td>
               </tr>
               <tr>
-                <td>Support</td>
-                <td>{supportData.support}</td>
+                <td id="section">Support</td>
+                <td id="response">{supportData.support}</td>
               </tr>
               <tr>
-                <td>Comments</td>
-                <td>{commentsData.comments}</td>
+                <td id="section">Comments</td>
+                <td id="response">{commentsData.comments}</td>
               </tr>
             </tbody>
           </table>

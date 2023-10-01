@@ -1,9 +1,33 @@
-.review-table, th, td {
+.review-card {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.review-table th, td {
     border: 2px solid black;
+    border-collapse: collapse;
 }
 
 .review-info {
     display: flex;
     justify-content: center;
     margin: 25px auto;
+}
+
+.review-table th {
+    text-align: center;
+}
+
+#section-head {
+    text-align: left;
+}
+
+#response {
+    text-align: center;
+    width: 300px;
+}
+
+#section {
+    font-weight: bold;
+    width: 100px;
 }

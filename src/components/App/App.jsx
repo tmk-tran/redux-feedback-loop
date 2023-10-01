@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import Header from "../Header/Header";
 import "./App.css";
 import Feeling from "../Feeling/Feeling";
@@ -28,6 +28,7 @@ function App() {
       <Route exact path="/review">
         <Review />
       </Route>
+      <Redirect to="/" /> {/* Default redirect to the first form */}
       <div className="nav">
         <Link className="link" to="/">
           Feeling

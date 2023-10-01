@@ -35,10 +35,8 @@ export default function Understanding() {
     });
     history.push("/support"); // add to pass prop to next component
 
-    // testing which feeling coming through
+    // testing which response coming through
     console.log("Response for understanding is: ", understanding);
-
-    setUnderstanding("");
   };
 
   const goBack = () => {

@@ -33,7 +33,7 @@ export default function Feeling() {
     // testing which feeling coming through
     console.log("Feeling is: ", selectedFeeling);
 
-    setSelectedFeeling("");
+    // setSelectedFeeling("");
   };
 
   //   axios

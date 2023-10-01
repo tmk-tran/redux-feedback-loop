@@ -39,16 +39,14 @@ export default function Comments() {
     });
     history.push("/review");
 
-    // testing which feeling coming through
+    // testing which comments coming through
     console.log("Response for comments: ", comments);
-
-    setComments("");
   };
 
   const goBack = () => {
     // need event prevent default here???
     console.log("clicked BACK");
-    history.push("/support");
+    history.push("/review");
   };
 
   return (
@@ -70,7 +68,7 @@ export default function Comments() {
             variant="outlined"
             fullWidth
             margin="normal"
-            onChange={(event) => setSupport(event.target.value)}
+            onChange={(event) => setComments(event.target.value)}
           />
           <Button
             onClick={handleSubmit}

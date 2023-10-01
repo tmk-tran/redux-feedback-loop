@@ -37,10 +37,8 @@ export default function Support() {
     });
     history.push("/comments"); // add to pass prop to next component
 
-    // testing which feeling coming through
+    // testing which response coming through
     console.log("Response for support is: ", support);
-
-    setSupport("");
   };
 
   const goBack = () => {

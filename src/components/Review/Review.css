@@ -1,0 +1,9 @@
+.review-table, th, td {
+    border: 2px solid black;
+}
+
+.review-info {
+    display: flex;
+    justify-content: center;
+    margin: 25px auto;
+}

@@ -9,7 +9,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 export default function Support() {
-  // bring in data fromm last component
+  // bring in data from last component
   const feelingData = useSelector((state) => state.feelingReducer);
   const understandingData = useSelector((state) => state.understandingReducer);
   console.log("IN SUPPORT COMPONENT, data received:", feelingData);

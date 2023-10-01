@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import "./Understanding.css";
 
 export default function Understanding() {
-  // bring in data fromm last component
+  // bring in data from last component
   const feelingData = useSelector((state) => state.feelingReducer);
   console.log("IN UNDERSTANDING COMPONENT, data received:", feelingData);
   // state for this component

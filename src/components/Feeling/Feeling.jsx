@@ -28,7 +28,7 @@ export default function Feeling() {
         feeling: selectedFeeling,
       },
     });
-    history.push("/understanding"); // add to pass prop to next component
+    history.push("/understanding");
 
     // testing which feeling coming through
     console.log("Feeling is: ", selectedFeeling);

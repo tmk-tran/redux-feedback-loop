@@ -40,18 +40,27 @@ function App() {
       });
   };
 
+  // const deleteFeedback = (id) => {
+  //   axios
+  //     .delete("/form/${id}")
+  //     .then((res) => {
+  //       // Update the feedbackList state by filtering out the deleted feedback
+  //       setFeedbackList((prevList) =>
+  //         prevList.filter((item) => item.id !== id)
+  //       );
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error deleting feedback", err);
+  //     });
+  // };
   const deleteFeedback = (id) => {
     axios
-      .delete("/form/${id}")
-      .then((res) => {
-        // Update the feedbackList state by filtering out the deleted feedback
-        setFeedbackList((prevList) =>
-          prevList.filter((item) => item.id !== id)
-        );
+      .delete(`/form/${id}`)
+      .then((response) => {
+        console.log("Clicked DELETE, deleting ID #: ", id);
+        getFeedback();
       })
-      .catch((err) => {
-        console.log("Error deleting feedback", err);
-      });
+      .catch((err) => console.log("Error in deleting feedback", err));
   };
 
   return (
@@ -59,7 +68,12 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/admin">
-          <Admin feedbackList={feedbackList} loading={loading} error={error} deleteFeedback={deleteFeedback} />
+          <Admin
+            feedbackList={feedbackList}
+            loading={loading}
+            error={error}
+            deleteFeedback={deleteFeedback}
+          />
         </Route>
         <Route exact path="/">
           <StartPage />

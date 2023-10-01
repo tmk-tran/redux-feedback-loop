@@ -65,7 +65,7 @@ export default function Admin({ feedbackList, loading, error, deleteFeedback }) 
                 <td>{feedback.support}</td>
                 <td>{feedback.comments}</td>
                 <td>
-                  <button onClick={deleteFeedback}>Delete</button>
+                <button onClick={() => deleteFeedback(feedback.id)}>Delete</button>
                 </td>
               </tr>
             ))}

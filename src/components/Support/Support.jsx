@@ -5,8 +5,10 @@ import { useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default function Support() {
   // bring in data from last component
@@ -60,69 +62,42 @@ export default function Support() {
         >
           Back
         </Button>
-        <div className="radio">
-          <table className="radio-table">
-            <thead>
-              <tr>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <input
-                    type="radio"
-                    name="support"
-                    value="1"
-                    id="input"
-                    onChange={(event) => setsupport(event.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="radio"
-                    name="support"
-                    value="2"
-                    id="input"
-                    onChange={(event) => setSupport(event.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="radio"
-                    name="support"
-                    value="3"
-                    id="input"
-                    onChange={(event) => setSupport(event.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="radio"
-                    name="support"
-                    value="4"
-                    id="input"
-                    onChange={(event) => setSupport(event.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="radio"
-                    name="support"
-                    value="5"
-                    id="input"
-                    onChange={(event) => setSupport(event.target.value)}
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
+        <RadioGroup
+          aria-label="gender"
+          name="controlled-radio-buttons-group"
+          value={support}
+        >
+          <FormControlLabel
+            value="1"
+            control={<Radio />}
+            label="1"
+            onChange={(event) => setSupport(event.target.value)}
+          />
+          <FormControlLabel
+            value="2"
+            control={<Radio />}
+            label="2"
+            onChange={(event) => setSupport(event.target.value)}
+          />
+          <FormControlLabel
+            value="3"
+            control={<Radio />}
+            label="3"
+            onChange={(event) => setSupport(event.target.value)}
+          />
+          <FormControlLabel
+            value="4"
+            control={<Radio />}
+            label="4"
+            onChange={(event) => setSupport(event.target.value)}
+          />
+          <FormControlLabel
+            value="5"
+            control={<Radio />}
+            label="5"
+            onChange={(event) => setSupport(event.target.value)}
+          />
+        </RadioGroup>
         <Button
           onClick={handleSubmit}
           variant="contained"

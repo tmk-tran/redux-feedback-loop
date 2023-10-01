@@ -6,6 +6,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import "./Feeling.css";
 
 export default function Feeling() {
@@ -48,94 +51,56 @@ export default function Feeling() {
     <Card className="card" variant="outlined">
       <CardContent>
         <Typography variant="h6">How are you feeling today?</Typography>
-        <form>
-          <Typography variant="h6">On a scale from 1-5:</Typography>
-          <br />
-          <br />
-          <div className="radio">
-            <table className="radio-table">
-              <thead>
-                <tr>
-                  <th>1</th>
-                  <th>2</th>
-                  <th>3</th>
-                  <th>4</th>
-                  <th>5</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <input
-                      type="radio"
-                      name="feeling"
-                      value="1"
-                      id="input"
-                      onChange={(event) =>
-                        setSelectedFeeling(event.target.value)
-                      }
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="radio"
-                      name="feeling"
-                      value="2"
-                      id="input"
-                      onChange={(event) =>
-                        setSelectedFeeling(event.target.value)
-                      }
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="radio"
-                      name="feeling"
-                      value="3"
-                      id="input"
-                      onChange={(event) =>
-                        setSelectedFeeling(event.target.value)
-                      }
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="radio"
-                      name="feeling"
-                      value="4"
-                      id="input"
-                      onChange={(event) =>
-                        setSelectedFeeling(event.target.value)
-                      }
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="radio"
-                      name="feeling"
-                      value="5"
-                      id="input"
-                      onChange={(event) =>
-                        setSelectedFeeling(event.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <br />
-          <br />
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            style={{ padding: "20px" }}
-            onClick={handleSubmit}
-          >
-            Next
-          </Button>
-        </form>
+        <Typography variant="h6">On a scale from 1-5:</Typography>
+        <br />
+        <br />
+        <RadioGroup
+          aria-label="gender"
+          name="controlled-radio-buttons-group"
+          value={selectedFeeling}
+        >
+          <FormControlLabel
+            value="1"
+            control={<Radio />}
+            label="1"
+            onChange={(event) => setSelectedFeeling(event.target.value)}
+          />
+          <FormControlLabel
+            value="2"
+            control={<Radio />}
+            label="2"
+            onChange={(event) => setSelectedFeeling(event.target.value)}
+          />
+          <FormControlLabel
+            value="3"
+            control={<Radio />}
+            label="3"
+            onChange={(event) => setSelectedFeeling(event.target.value)}
+          />
+          <FormControlLabel
+            value="4"
+            control={<Radio />}
+            label="4"
+            onChange={(event) => setSelectedFeeling(event.target.value)}
+          />
+          <FormControlLabel
+            value="5"
+            control={<Radio />}
+            label="5"
+            onChange={(event) => setSelectedFeeling(event.target.value)}
+          />
+        </RadioGroup>
+        <br />
+        <br />
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          style={{ padding: "20px" }}
+          onClick={handleSubmit}
+        >
+          Next
+        </Button>
       </CardContent>
     </Card>
   );

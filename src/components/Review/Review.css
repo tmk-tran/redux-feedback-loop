@@ -3,6 +3,7 @@
     margin: 0 auto;
 }
 
+.review-table, 
 .review-table th, td {
     border: 2px solid black;
     border-collapse: collapse;
@@ -16,6 +17,7 @@
 
 .review-table th {
     text-align: center;
+    background-color: rgb(203, 201, 197);
 }
 
 #section-head {
@@ -29,5 +31,5 @@
 
 #section {
     font-weight: bold;
-    width: 100px;
+    width: 125px;
 }

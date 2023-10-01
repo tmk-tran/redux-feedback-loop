@@ -16,10 +16,50 @@ const feelingReducer = (state = [], action) => {
     }
 }
 
+const understandingReducer = (state = [], action) => {
+    switch (action.type) {
+        case "SET_UNDERSTANDING":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+const supportReducer = (state = [], action) => {
+    switch (action.type) {
+        case "SET_SUPPORT":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+const commentsReducer = (state = [], action) => {
+    switch (action.type) {
+        case "SET_COMMENTS":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+const reviewReducer = (state = [], action) => {
+    switch (action.type) {
+        case "SET_REVIEW":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 const store = createStore(
     combineReducers({
         //add reducers here
-        feelingReducer
+        feelingReducer,
+        understandingReducer,
+        supportReducer,
+        commentsReducer,
+        reviewReducer
     }),
     applyMiddleware(logger)
 )

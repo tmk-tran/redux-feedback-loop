@@ -20,6 +20,22 @@ export default function Review() {
   let formData = [feelingData.feeling, understandingData.understanding, supportData.support, commentsData.comments];
   console.log('FORM DATA CONTAINS: ', formData);
 
+  const submitOrder = () => {
+    let orderObject = {
+      customer_name: customer.name,
+      street_address: customer.address,
+      pizzas: cart.cart,
+      total: cart.totalPrice,
+      type: customer.DeliveryMethod,
+      city: customer.city,
+      zip: customer.zip,
+    };
+
+    axios.post("/api/order", orderObject).then((response) => {
+      console.log("post at api/order", response);
+    });
+  };
+
 
   return (
     <Card className="card" variant="outlined">

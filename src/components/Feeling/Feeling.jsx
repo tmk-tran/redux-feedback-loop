@@ -25,18 +25,18 @@ export default function Feeling() {
       return alert("Please select a feeling!");
     }
 
+    const feelingValue = Number(selectedFeeling); // converting to a number to send
+
     dispatch({
       type: "SET_FEELING",
       payload: {
-        feeling: selectedFeeling,
+        feeling: feelingValue, // sending the value as a number
       },
     });
     history.push("/understanding");
 
     // testing which feeling coming through
     console.log("Feeling is: ", selectedFeeling);
-
-    // setSelectedFeeling("");
   };
 
   //   axios
@@ -60,36 +60,36 @@ export default function Feeling() {
           value={selectedFeeling}
         >
           <div>
-          <FormControlLabel
-            value="1"
-            control={<Radio />}
-            label="1"
-            onChange={(event) => setSelectedFeeling(event.target.value)}
-          />
-          <FormControlLabel
-            value="2"
-            control={<Radio />}
-            label="2"
-            onChange={(event) => setSelectedFeeling(event.target.value)}
-          />
-          <FormControlLabel
-            value="3"
-            control={<Radio />}
-            label="3"
-            onChange={(event) => setSelectedFeeling(event.target.value)}
-          />
-          <FormControlLabel
-            value="4"
-            control={<Radio />}
-            label="4"
-            onChange={(event) => setSelectedFeeling(event.target.value)}
-          />
-          <FormControlLabel
-            value="5"
-            control={<Radio />}
-            label="5"
-            onChange={(event) => setSelectedFeeling(event.target.value)}
-          />
+            <FormControlLabel
+              value="1"
+              control={<Radio />}
+              label="1"
+              onChange={(event) => setSelectedFeeling(event.target.value)}
+            />
+            <FormControlLabel
+              value="2"
+              control={<Radio />}
+              label="2"
+              onChange={(event) => setSelectedFeeling(event.target.value)}
+            />
+            <FormControlLabel
+              value="3"
+              control={<Radio />}
+              label="3"
+              onChange={(event) => setSelectedFeeling(event.target.value)}
+            />
+            <FormControlLabel
+              value="4"
+              control={<Radio />}
+              label="4"
+              onChange={(event) => setSelectedFeeling(event.target.value)}
+            />
+            <FormControlLabel
+              value="5"
+              control={<Radio />}
+              label="5"
+              onChange={(event) => setSelectedFeeling(event.target.value)}
+            />
           </div>
         </RadioGroup>
         <br />

@@ -31,13 +31,15 @@ export default function Support() {
       return alert("Please enter your response!");
     }
 
+    const supportValue = Number(support); // converting to a number to send
+
     dispatch({
       type: "SET_SUPPORT",
       payload: {
-        support: support,
+        support: supportValue, // sending the value as a number
       },
     });
-    history.push("/comments"); // add to pass prop to next component
+    history.push("/comments");
 
     // testing which response coming through
     console.log("Response for support is: ", support);

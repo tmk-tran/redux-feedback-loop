@@ -29,13 +29,15 @@ export default function Understanding() {
       return alert("Please enter your response!");
     }
 
+    const understandingValue = Number(understanding); // converting to a number to send
+
     dispatch({
       type: "SET_UNDERSTANDING",
       payload: {
-        understanding: understanding,
+        understanding: understandingValue, // sending the value as a number
       },
     });
-    history.push("/support"); // add to pass prop to next component
+    history.push("/support");
 
     // testing which response coming through
     console.log("Response for understanding is: ", understanding);

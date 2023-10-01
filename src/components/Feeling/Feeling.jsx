@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -6,7 +8,52 @@ import Button from "@mui/material/Button";
 import "./Feeling.css";
 
 export default function Feeling() {
-  const [feeling, setFeeling] = React.useState("");
+  const [feeling1, setFeeling1] = React.useState("");
+  const [feeling2, setFeeling2] = React.useState("");
+  const [feeling3, setFeeling3] = React.useState("");
+  const [feeling4, setFeeling4] = React.useState("");
+  const [feeling5, setFeeling5] = React.useState("");
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleSubmit = (event) => {
+    console.log("clicked NEXT", event);
+    event.preventDefault();
+    dispatch({
+      type: "SET_FEELING",
+      payload: {
+        feeling1: feeling1,
+        feeling2: feeling2,
+        feeling3: feeling3,
+        feeling4: feeling4,
+        feeling5: feeling5,
+      },
+    });
+    history.push("/understanding");
+    console.log(
+      "Feeling is: ",
+      feeling1,
+      feeling2,
+      feeling3,
+      feeling4,
+      feeling5
+    );
+
+    setFeeling1("");
+    setFeeling2("");
+    setFeeling3("");
+    setFeeling4("");
+    setFeeling5("");
+  };
+
+  //   axios
+  //     .post("/orders/", {newName, newAddress, newCity, newZip, newDeliveryMethod})
+  //     .then((response) => {
+  //       console.log('POSTing orders', );
+  //     })
+  //     .catch((err) => console.log("Error in adding new order", err));
+  // };
 
   return (
     <Card className="card" variant="outlined">
@@ -35,8 +82,8 @@ export default function Feeling() {
                       name="feeling"
                       value="1"
                       id="input"
-                      //   checked={newDeliveryMethod === "Delivery"}
-                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    //   checked={feeling1 === "1"}
+                      onChange={(event) => setFeeling1(event.target.value)}
                     />
                   </td>
                   <td>
@@ -45,8 +92,8 @@ export default function Feeling() {
                       name="feeling"
                       value="2"
                       id="input"
-                      //   checked={newDeliveryMethod === "Delivery"}
-                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    //   checked={feeling2 === "2"}
+                      onChange={(event) => setFeeling2(event.target.value)}
                     />
                   </td>
                   <td>
@@ -55,8 +102,8 @@ export default function Feeling() {
                       name="feeling"
                       value="3"
                       id="input"
-                      //   checked={newDeliveryMethod === "Delivery"}
-                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    //   checked={feeling3 === "3"}
+                      onChange={(event) => setFeeling3(event.target.value)}
                     />
                   </td>
                   <td>
@@ -65,8 +112,8 @@ export default function Feeling() {
                       name="feeling"
                       value="4"
                       id="input"
-                      //   checked={newDeliveryMethod === "Delivery"}
-                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    //   checked={feeling4 === "4"}
+                      onChange={(event) => setFeeling4(event.target.value)}
                     />
                   </td>
                   <td>
@@ -75,8 +122,8 @@ export default function Feeling() {
                       name="feeling"
                       value="5"
                       id="input"
-                      //   checked={newDeliveryMethod === "Delivery"}
-                      //   onChange={(event) => setNewDeliveryMethod(event.target.value)}
+                    //   checked={feeling5 === "5"}
+                      onChange={(event) => setFeeling5(event.target.value)}
                     />
                   </td>
                 </tr>
@@ -85,7 +132,13 @@ export default function Feeling() {
           </div>
           <br />
           <br />
-          <Button variant="contained" color="primary" fullWidth style={{ padding: "20px" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            style={{ padding: "20px" }}
+            onClick={handleSubmit}
+          >
             Next
           </Button>
         </form>

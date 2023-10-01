@@ -62,14 +62,78 @@ export default function Understanding() {
             Back
           </Button>
         </div>
-        <form>
-          <TextField
-            label="Understanding"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            onChange={(event) => setUnderstanding(event.target.value)}
-          />
+        <div className="radio">
+            <table className="radio-table">
+              <thead>
+                <tr>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="radio"
+                      name="understanding"
+                      value="1"
+                      id="input"
+                      onChange={(event) =>
+                        setUnderstanding(event.target.value)
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="understanding"
+                      value="2"
+                      id="input"
+                      onChange={(event) =>
+                        setUnderstanding(event.target.value)
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="understanding"
+                      value="3"
+                      id="input"
+                      onChange={(event) =>
+                        setUnderstanding(event.target.value)
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="understanding"
+                      value="4"
+                      id="input"
+                      onChange={(event) =>
+                        setUnderstanding(event.target.value)
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="understanding"
+                      value="5"
+                      id="input"
+                      onChange={(event) =>
+                        setUnderstanding(event.target.value)
+                      }
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <Button
             onClick={handleSubmit}
             variant="contained"
@@ -78,7 +142,6 @@ export default function Understanding() {
           >
             Next
           </Button>
-        </form>
       </CardContent>
     </Card>
   );

@@ -60,23 +60,77 @@ export default function Support() {
         >
           Back
         </Button>
-        <form>
-          <TextField
-            label="Support"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            onChange={(event) => setSupport(event.target.value)}
-          />
-          <Button
-            onClick={handleSubmit}
-            variant="contained"
-            color="primary"
-            fullWidth
-          >
-            Next
-          </Button>
-        </form>
+        <div className="radio">
+          <table className="radio-table">
+            <thead>
+              <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    type="radio"
+                    name="support"
+                    value="1"
+                    id="input"
+                    onChange={(event) => setsupport(event.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    name="support"
+                    value="2"
+                    id="input"
+                    onChange={(event) => setSupport(event.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    name="support"
+                    value="3"
+                    id="input"
+                    onChange={(event) => setSupport(event.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    name="support"
+                    value="4"
+                    id="input"
+                    onChange={(event) => setSupport(event.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    name="support"
+                    value="5"
+                    id="input"
+                    onChange={(event) => setSupport(event.target.value)}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <Button
+          onClick={handleSubmit}
+          variant="contained"
+          color="primary"
+          fullWidth
+        >
+          Next
+        </Button>
       </CardContent>
     </Card>
   );

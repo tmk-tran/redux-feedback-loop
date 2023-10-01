@@ -18,7 +18,8 @@ export default function Feeling() {
   const history = useHistory();
 
   const handleSubmit = (event) => {
-    console.log("clicked NEXT", event);
+    console.log("clicked NEXT");
+
     event.preventDefault();
     dispatch({
       type: "SET_FEELING",
@@ -31,6 +32,8 @@ export default function Feeling() {
       },
     });
     history.push("/understanding");
+
+    // testing which feeling coming through
     console.log(
       "Feeling is: ",
       feeling1,
@@ -82,7 +85,6 @@ export default function Feeling() {
                       name="feeling"
                       value="1"
                       id="input"
-                    //   checked={feeling1 === "1"}
                       onChange={(event) => setFeeling1(event.target.value)}
                     />
                   </td>
@@ -92,7 +94,6 @@ export default function Feeling() {
                       name="feeling"
                       value="2"
                       id="input"
-                    //   checked={feeling2 === "2"}
                       onChange={(event) => setFeeling2(event.target.value)}
                     />
                   </td>
@@ -102,7 +103,6 @@ export default function Feeling() {
                       name="feeling"
                       value="3"
                       id="input"
-                    //   checked={feeling3 === "3"}
                       onChange={(event) => setFeeling3(event.target.value)}
                     />
                   </td>
@@ -112,7 +112,6 @@ export default function Feeling() {
                       name="feeling"
                       value="4"
                       id="input"
-                    //   checked={feeling4 === "4"}
                       onChange={(event) => setFeeling4(event.target.value)}
                     />
                   </td>
@@ -122,7 +121,6 @@ export default function Feeling() {
                       name="feeling"
                       value="5"
                       id="input"
-                    //   checked={feeling5 === "5"}
                       onChange={(event) => setFeeling5(event.target.value)}
                     />
                   </td>

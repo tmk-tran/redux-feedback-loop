@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+// copy first three lines for other components setup
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -18,7 +19,7 @@ export default function Feeling() {
 
     event.preventDefault();
     if (selectedFeeling === "") {
-        return alert("Please select a feeling");
+      return alert("Please select a feeling!");
     }
 
     dispatch({
@@ -27,13 +28,10 @@ export default function Feeling() {
         feeling: selectedFeeling,
       },
     });
-    history.push("/understanding");
+    history.push("/understanding"); // add to pass prop to next component
 
     // testing which feeling coming through
-    console.log(
-      "Feeling is: ",
-      selectedFeeling
-    );
+    console.log("Feeling is: ", selectedFeeling);
 
     setSelectedFeeling("");
   };
@@ -73,7 +71,9 @@ export default function Feeling() {
                       name="feeling"
                       value="1"
                       id="input"
-                      onChange={(event) => setSelectedFeeling(event.target.value)}
+                      onChange={(event) =>
+                        setSelectedFeeling(event.target.value)
+                      }
                     />
                   </td>
                   <td>
@@ -82,7 +82,9 @@ export default function Feeling() {
                       name="feeling"
                       value="2"
                       id="input"
-                      onChange={(event) => setSelectedFeeling(event.target.value)}
+                      onChange={(event) =>
+                        setSelectedFeeling(event.target.value)
+                      }
                     />
                   </td>
                   <td>
@@ -91,7 +93,9 @@ export default function Feeling() {
                       name="feeling"
                       value="3"
                       id="input"
-                      onChange={(event) => setSelectedFeeling(event.target.value)}
+                      onChange={(event) =>
+                        setSelectedFeeling(event.target.value)
+                      }
                     />
                   </td>
                   <td>
@@ -100,7 +104,9 @@ export default function Feeling() {
                       name="feeling"
                       value="4"
                       id="input"
-                      onChange={(event) => setSelectedFeeling(event.target.value)}
+                      onChange={(event) =>
+                        setSelectedFeeling(event.target.value)
+                      }
                     />
                   </td>
                   <td>
@@ -109,7 +115,9 @@ export default function Feeling() {
                       name="feeling"
                       value="5"
                       id="input"
-                      onChange={(event) => setSelectedFeeling(event.target.value)}
+                      onChange={(event) =>
+                        setSelectedFeeling(event.target.value)
+                      }
                     />
                   </td>
                 </tr>

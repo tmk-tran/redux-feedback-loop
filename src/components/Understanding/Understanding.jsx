@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -7,6 +9,42 @@ import Button from "@mui/material/Button";
 import "./Understanding.css";
 
 export default function Understanding() {
+  // bring in data fromm last component
+  const feelingData = useSelector((state) => state.feelingReducer);
+  console.log("Feeling Data in Understanding component:", feelingData);
+  // state for this component
+  const [understanding, setUnderstanding] = useState("");
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleSubmit = (event) => {
+    console.log("clicked NEXT");
+
+    event.preventDefault();
+    if (understanding === "") {
+      return alert("Please enter your response!");
+    }
+
+    dispatch({
+      type: "SET_UNDERSTANDING",
+      payload: {
+        understanding: understanding,
+      },
+    });
+    history.push("/support"); // add to pass prop to next component
+
+    // testing which feeling coming through
+    console.log("Response for understanding is: ", understanding);
+
+    setUnderstanding("");
+  };
+
+  const goBack = () => { // need event prevent default here???
+    console.log("clicked BACK");
+    history.push("/");
+  }
+
   return (
     <Card variant="outlined">
       <CardContent>
@@ -14,9 +52,15 @@ export default function Understanding() {
           <Typography variant="h6">
             How well are you understanding the content?
           </Typography>
-            <Button className="topBtn" variant="contained" color="primary" size="small">
-              Back
-            </Button>
+          <Button
+            onClick={goBack}          
+            className="topBtn"
+            variant="contained"
+            color="primary"
+            size="small"
+          >
+            Back
+          </Button>
         </div>
         <form>
           <TextField
@@ -24,8 +68,9 @@ export default function Understanding() {
             variant="outlined"
             fullWidth
             margin="normal"
+            onChange={(event) => setUnderstanding(event.target.value)}
           />
-          <Button variant="contained" color="primary" fullWidth>
+          <Button onClick={handleSubmit} variant="contained" color="primary" fullWidth>
             Next
           </Button>
         </form>

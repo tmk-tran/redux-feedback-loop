@@ -36,5 +36,6 @@ th {
 }
 
 .card {
-    margin: 25px;
+    width: 50%;
+    margin: 0 auto;
 }

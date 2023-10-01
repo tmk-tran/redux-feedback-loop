@@ -50,53 +50,64 @@ export default function Support() {
   };
 
   return (
-    <Card variant="outlined">
+    <Card className="card" variant="outlined">
       <CardContent>
-        <Typography variant="h6">How well are you being supported?</Typography>
-        <Button
-          onClick={goBack}
-          className="topBtn"
-          variant="contained"
-          color="primary"
-          size="small"
-        >
-          Back
-        </Button>
+        <div className="top">
+          <div className="header">
+            <Typography variant="h6">
+              How well are you being supported?
+            </Typography>
+          </div>
+          <div>
+          <Button
+            onClick={goBack}
+            className="topBtn"
+            variant="contained"
+            color="primary"
+            size="small"
+          >
+            Back
+          </Button>
+          </div>
+        </div>
+        <Typography variant="h7">On a scale from 1-5:</Typography>
         <RadioGroup
           aria-label="gender"
           name="controlled-radio-buttons-group"
           value={support}
         >
-          <FormControlLabel
-            value="1"
-            control={<Radio />}
-            label="1"
-            onChange={(event) => setSupport(event.target.value)}
-          />
-          <FormControlLabel
-            value="2"
-            control={<Radio />}
-            label="2"
-            onChange={(event) => setSupport(event.target.value)}
-          />
-          <FormControlLabel
-            value="3"
-            control={<Radio />}
-            label="3"
-            onChange={(event) => setSupport(event.target.value)}
-          />
-          <FormControlLabel
-            value="4"
-            control={<Radio />}
-            label="4"
-            onChange={(event) => setSupport(event.target.value)}
-          />
-          <FormControlLabel
-            value="5"
-            control={<Radio />}
-            label="5"
-            onChange={(event) => setSupport(event.target.value)}
-          />
+          <div>
+            <FormControlLabel
+              value="1"
+              control={<Radio />}
+              label="1"
+              onChange={(event) => setSupport(event.target.value)}
+            />
+            <FormControlLabel
+              value="2"
+              control={<Radio />}
+              label="2"
+              onChange={(event) => setSupport(event.target.value)}
+            />
+            <FormControlLabel
+              value="3"
+              control={<Radio />}
+              label="3"
+              onChange={(event) => setSupport(event.target.value)}
+            />
+            <FormControlLabel
+              value="4"
+              control={<Radio />}
+              label="4"
+              onChange={(event) => setSupport(event.target.value)}
+            />
+            <FormControlLabel
+              value="5"
+              control={<Radio />}
+              label="5"
+              onChange={(event) => setSupport(event.target.value)}
+            />
+          </div>
         </RadioGroup>
         <Button
           onClick={handleSubmit}

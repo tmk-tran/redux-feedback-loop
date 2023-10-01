@@ -18,7 +18,7 @@ export default function Review() {
   console.log("IN REVIEW COMPONENT, data received:", commentsData);
 
   return (
-    <Card className="review-card" variant="outlined">
+    <Card className="card" variant="outlined">
       <CardContent>
         <Typography variant="h6">Please review your feedback:</Typography>
         <div className="review-info">

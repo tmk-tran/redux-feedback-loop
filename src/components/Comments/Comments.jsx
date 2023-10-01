@@ -50,9 +50,10 @@ export default function Comments() {
   };
 
   return (
-    <Card variant="outlined">
+    <Card className="card" variant="outlined">
       <CardContent>
         <Typography variant="h6">Any comments you want to leave?</Typography>
+        <br />
         <Button
           onClick={goBack}
           className="topBtn"
@@ -62,6 +63,8 @@ export default function Comments() {
         >
           Back
         </Button>
+        <br />
+        <br />
         <form>
           <TextField
             label="Comments"

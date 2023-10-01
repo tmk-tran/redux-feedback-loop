@@ -51,7 +51,7 @@ export default function Feeling() {
     <Card className="card" variant="outlined">
       <CardContent>
         <Typography variant="h6">How are you feeling today?</Typography>
-        <Typography variant="h6">On a scale from 1-5:</Typography>
+        <Typography variant="h7">On a scale from 1-5:</Typography>
         <br />
         <br />
         <RadioGroup
@@ -59,6 +59,7 @@ export default function Feeling() {
           name="controlled-radio-buttons-group"
           value={selectedFeeling}
         >
+          <div>
           <FormControlLabel
             value="1"
             control={<Radio />}
@@ -89,6 +90,7 @@ export default function Feeling() {
             label="5"
             onChange={(event) => setSelectedFeeling(event.target.value)}
           />
+          </div>
         </RadioGroup>
         <br />
         <br />

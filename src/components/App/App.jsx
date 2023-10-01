@@ -17,6 +17,7 @@ import Support from "../Support/Support";
 import Review from "../Review/Review";
 import Comments from "../Comments/Comments";
 import SuccessPage from "../SuccessPage/SuccessPage";
+import Swal from "sweetalert2";
 
 function App() {
   const [feedbackList, setFeedbackList] = useState([]);
@@ -40,27 +41,41 @@ function App() {
       });
   };
 
-  // const deleteFeedback = (id) => {
-  //   axios
-  //     .delete("/form/${id}")
-  //     .then((res) => {
-  //       // Update the feedbackList state by filtering out the deleted feedback
-  //       setFeedbackList((prevList) =>
-  //         prevList.filter((item) => item.id !== id)
-  //       );
-  //     })
-  //     .catch((err) => {
-  //       console.log("Error deleting feedback", err);
-  //     });
-  // };
   const deleteFeedback = (id) => {
-    axios
-      .delete(`/form/${id}`)
-      .then((response) => {
-        console.log("Clicked DELETE, deleting ID #: ", id);
-        getFeedback();
-      })
-      .catch((err) => console.log("Error in deleting feedback", err));
+    Swal.fire({ // essential sweet alert info
+      title: "Are you sure?",
+      text: "You will not be able to recover this feedback!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // User confirmed, proceed with deletion
+        axios
+          .delete(`/form/${id}`)
+          .then((response) => {
+            Swal.fire({ // additional message for delete button press
+              title: "Deleted!",
+              text: "The feedback has been deleted.",
+              icon: "success",
+            });
+            console.log("Clicked DELETE, deleting ID #: ", id);
+            getFeedback();
+          })
+          .catch((err) => {
+            Swal.fire({ // additional message for cancel button press
+              title: "Error",
+              text: "An error occurred while deleting the feedback.",
+              icon: "error",
+            });
+            console.log("Error in deleting feedback", err);
+          });
+      } else {
+        // User cancels the deletion, message to show
+        Swal.fire("Cancelled", "The feedback was not deleted.", "info");
+      }
+    });
   };
 
   return (

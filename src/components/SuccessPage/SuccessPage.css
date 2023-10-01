@@ -1,14 +1,16 @@
 .card h4 {
     text-align: center;
-    background-color: rgb(132, 157, 233);
+    background-color: rgb(24, 57, 156);
     border-radius: 5px;
     font-family: system-ui;
+    color: ghostwhite;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .success-info {
     padding: 15px;
-    background-color: rgb(182, 176, 187);
+    background-color: rgb(203, 198, 207);
     border-radius: 10px;
 }
 

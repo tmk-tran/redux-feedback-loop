@@ -1,7 +1,14 @@
 import React from "react";
-import { HashRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 import Header from "../Header/Header";
 import "./App.css";
+import Admin from "../Admin/Admin";
 import StartPage from "../StartPage/StartPage";
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
@@ -14,29 +21,35 @@ function App() {
   return (
     <Router>
       <Header />
-      <Route exact path="/">
-        <StartPage />
-      </Route>
-      <Route exact path="/feeling">
-        <Feeling />
-      </Route>
-      <Route exact path="/understanding">
-        <Understanding />
-      </Route>
-      <Route exact path="/support">
-        <Support />
-      </Route>
-      <Route exact path="/comments">
-        <Comments />
-      </Route>
-      <Route exact path="/review">
-        <Review />
-      </Route>
-      <Route exact path="/success">
-        <SuccessPage />
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <StartPage />
+        </Route>
+        <Route exact path="/admin">
+          <Admin />
+        </Route>
+        <Route exact path="/feeling">
+          <Feeling />
+        </Route>
+        <Route exact path="/understanding">
+          <Understanding />
+        </Route>
+        <Route exact path="/support">
+          <Support />
+        </Route>
+        <Route exact path="/comments">
+          <Comments />
+        </Route>
+        <Route exact path="/review">
+          <Review />
+        </Route>
+        <Route exact path="/success">
+          <SuccessPage />
+        </Route>
+      </Switch>
       <Redirect to="/" /> {/* Default redirect to the first form */}
       <div className="nav">
+        <Link to="/admin">Admin</Link>
         <Link to="/">Home</Link>
         <Link to="/feeling">Feeling</Link>
         <Link to="/understanding">Understanding</Link>

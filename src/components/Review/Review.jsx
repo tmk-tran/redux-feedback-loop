@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -18,7 +19,10 @@ export default function Review() {
   console.log("IN REVIEW COMPONENT, data received:", supportData);
   console.log("IN REVIEW COMPONENT, data received:", commentsData);
 
+  const history = useHistory();
+
   const submitForm = () => {
+
     let formData = {
       feeling: feelingData.feeling,
       understanding: understandingData.understanding,
@@ -37,6 +41,7 @@ export default function Review() {
       .catch((error) => {
         console.log("Error sending: ", error);
       });
+      history.push("/success");
   };
 
   return (

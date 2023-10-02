@@ -25,6 +25,13 @@ Proceed through the forms by responding to each, 4 total:
 The admin page can be accessed by using 'localhost:3000/#/admin'
 - proceed here to see a table of all the feedback data with options to flag or delete line items
 
+##### Accessing the Admin page #####
+- USE:
+    - username: admin 
+    - password: password
+
+Additionally, can press the 'info' button, and will display this information as well.
+
 ## Built with:
 - Node
 - React

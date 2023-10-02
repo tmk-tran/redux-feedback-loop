@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Link,
   Redirect,
@@ -87,8 +87,6 @@ function App() {
         <Route exact path="/admin">
           <Admin
             feedbackList={feedbackList}
-            loading={loading}
-            error={error}
             getFeedback={getFeedback}
             deleteFeedback={deleteFeedback}
           />
@@ -115,7 +113,7 @@ function App() {
           <SuccessPage />
         </Route>
       </Switch>
-      <Redirect to="/admin" /> {/* Default redirect to the first form */}
+      <Redirect to="/" /> {/* Default redirect to the first form */}
       <div className="nav">
         {/* <Link to="/admin">Admin</Link> */}
         <Link to="/">Home</Link>

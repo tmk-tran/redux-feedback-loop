@@ -4,7 +4,6 @@ import {
   HashRouter as Router,
   Route,
   Link,
-  Redirect,
   Switch,
 } from "react-router-dom";
 import Header from "../Header/Header";
@@ -109,7 +108,6 @@ function App() {
           <SuccessPage />
         </Route>
       </Switch>
-      {/* <Redirect to="/" /> Default redirect to the first form */}
       <div className="nav">
         {/* <Link to="/admin">Admin</Link> */}
         <Link to="/">Home</Link>

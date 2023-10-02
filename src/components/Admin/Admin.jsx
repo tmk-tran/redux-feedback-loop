@@ -7,6 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
 
 import "./Admin.css";
 
@@ -18,6 +19,7 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // added useEffect to get data on page load
   useEffect(() => {
@@ -50,11 +52,23 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
     setUsername("");
     setPassword("");
   };
+  // snackbar message for login
+  const openSnackbar = () => {
+    setOpen(true);
+  };
+
+  const closeSnackbar = () => {
+    setOpen(false);
+  };
 
   return (
     <div>
       {loggedIn ? (
         <div>
+          <Button id= "logoutBtn" onClick={handleLogout} variant="contained" color="info">
+            Logout
+          </Button>
+          <br />
           <h1 className="admin-h1">Welcome to Admin</h1>
           <table className="admin-table">
             <thead className="admin-head">
@@ -91,13 +105,14 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
               ))}
             </tbody>
           </table>
-          <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <div className="login-form">
-          <Card style={{width: "15%", margin: "0 auto"}}>
+          <Card style={{ width: "15%", margin: "0 auto" }}>
             <CardContent className="login-card">
-              <Typography className="login-head" variant="h3">Hello!</Typography>
+              <Typography className="login-head" variant="h3">
+                Hello!
+              </Typography>
               <br />
               <br />
               <TextField
@@ -120,10 +135,28 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
               />
               <br />
               <Button onClick={handleLogin}>Login</Button>
+              <Button onClick={openSnackbar}>Info</Button>
             </CardContent>
           </Card>
         </div>
       )}
+      <Snackbar
+        open={open}
+        autoHideDuration={20000}
+        onClose={closeSnackbar}
+        message={
+          <div>
+            <h3>Credentials:</h3>
+            <ul>admin</ul>
+            <ul>password</ul>
+          </div>
+        }
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        style={{ fontSize: "28px", padding: "20px" }}
+      />
     </div>
   );
 }

@@ -17,6 +17,9 @@ import Review from "../Review/Review";
 import Comments from "../Comments/Comments";
 import SuccessPage from "../SuccessPage/SuccessPage";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [feedbackList, setFeedbackList] = useState([]);
@@ -110,12 +113,12 @@ function App() {
       </Switch>
       <div className="nav">
         {/* <Link to="/admin">Admin</Link> */}
-        <Link to="/">Home</Link>
+        <Link to="/"><FontAwesomeIcon icon={faHome}/></Link>
         <Link to="/feeling">Feeling</Link>
         <Link to="/understanding">Understanding</Link>
         <Link to="/support">Support</Link>
         <Link to="/comments">Comments</Link>
-        <Link to="/review">Review</Link>
+        <Link to="/review"><FontAwesomeIcon icon={faEye}/></Link>
         {/* <Link to="/success">Success</Link> */}
       </div>
     </Router>

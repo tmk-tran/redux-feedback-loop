@@ -54,3 +54,7 @@
     background-color: rgba(248, 248, 255, 0.374);
     border-radius: 10px;
 }
+
+#logoutBtn {
+    margin-left: 45px;
+}

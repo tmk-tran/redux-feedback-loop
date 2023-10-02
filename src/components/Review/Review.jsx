@@ -22,13 +22,22 @@ export default function Review() {
   const history = useHistory();
 
   const submitForm = () => {
-
     let formData = {
       feeling: feelingData.feeling,
       understanding: understandingData.understanding,
       support: supportData.support,
       comments: commentsData.comments,
     };
+    // Check if any field is empty
+    if (
+      formData.feeling === undefined ||
+      formData.understanding === undefined ||
+      formData.support === undefined ||
+      formData.comments === undefined
+    ) {
+      alert("Please fill out all fields");
+      return; // Stop the function if any field is empty
+    }
 
     console.log("FORM DATA CONTAINS: ", formData);
 
@@ -41,7 +50,7 @@ export default function Review() {
       .catch((error) => {
         console.log("Error sending: ", error);
       });
-      history.push("/success");
+    history.push("/success");
   };
 
   return (

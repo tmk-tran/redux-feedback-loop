@@ -54,7 +54,7 @@ export default function StartPage() {
             vertical: 'bottom', // 'top', 'bottom'
             horizontal: 'center', // 'left', 'center', 'right'
           }}
-          style={{ fontSize: '28px', padding: '20px' }} // Custom styles
+          style={{ fontSize: '28px', padding: '20px' }}
         />
         <Button onClick={startClick} variant="contained" color="primary">
           Start

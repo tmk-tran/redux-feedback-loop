@@ -35,7 +35,8 @@ a:hover {
 }
 
 body {
-  background-color: seagreen;
+  /* background-color: seagreen; */
+  background: linear-gradient(to right, #45bc8b, #5d8cae);
 }
 
 #Link {

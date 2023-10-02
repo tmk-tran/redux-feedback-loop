@@ -23,7 +23,8 @@
 .admin-table th {
     background-color: steelblue;
     color: aliceblue;
-    font-size: smaller;
+    font-size: 20px;
+    padding: 10px
 }
 
 #id {
@@ -36,4 +37,20 @@
 
 .flagged-row td {
     background-color: transparent; /* added for ability to see the flagged row */
+}
+
+.login-head {
+    background-color: rgb(74, 74, 115);
+    border-radius: 5px;
+    color:ghostwhite;
+    text-align: center;
+}
+
+.login-card {
+    background-color: rgb(13, 36, 36);
+}
+
+.login-input {
+    background-color: rgba(248, 248, 255, 0.374);
+    border-radius: 10px;
 }

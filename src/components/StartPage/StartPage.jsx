@@ -44,10 +44,10 @@ export default function StartPage() {
           'Start' to begin
         </Typography>
         <br />
-        <button onClick={openSnackbar}>Info</button>
+        <Button onClick={openSnackbar}>Info</Button>
         <Snackbar
           open={open}
-          autoHideDuration={10000} // Adjust the duration as needed
+          autoHideDuration={9000} // time adjustment
           onClose={closeSnackbar}
           message="Please fill out all the forms, and submit! Your feedback is greatly appreciated!"
           anchorOrigin={{

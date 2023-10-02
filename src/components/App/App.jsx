@@ -18,8 +18,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
-import { faList } from '@fortawesome/free-solid-svg-icons';
-
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [feedbackList, setFeedbackList] = useState([]);
@@ -116,12 +115,6 @@ function App() {
       </Switch>
       <div className="nav">
         {/* <Link to="/admin">Admin</Link> */}
-        {/* <Link to="/"><FontAwesomeIcon icon={faHome}/></Link>
-        <Link to="/feeling">Feeling</Link>
-        <Link to="/understanding">Understanding</Link>
-        <Link to="/support">Support</Link>
-        <Link to="/comments">Comments</Link>
-        <Link to="/review"><FontAwesomeIcon icon={faEye}/></Link> */}
         {/* <Link to="/success">Success</Link> */}
         <AppBar position="static">
           <Toolbar>
@@ -142,7 +135,7 @@ function App() {
               <Button color="inherit">Comments</Button>
             </Link>
             <Link id="Link" to="/review">
-              <FontAwesomeIcon icon={faList}/>
+              <FontAwesomeIcon icon={faList} />
             </Link>
           </Toolbar>
         </AppBar>

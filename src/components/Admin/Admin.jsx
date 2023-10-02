@@ -65,11 +65,13 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
     <div>
       {loggedIn ? (
         <div>
+          <br />
+          <h1 className="admin-h1">Welcome to Admin</h1>
           <Button id= "logoutBtn" onClick={handleLogout} variant="contained" color="info">
             Logout
           </Button>
           <br />
-          <h1 className="admin-h1">Welcome to Admin</h1>
+          <br />
           <table className="admin-table">
             <thead className="admin-head">
               <tr>

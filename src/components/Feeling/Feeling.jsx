@@ -39,14 +39,6 @@ export default function Feeling() {
     console.log("Feeling is: ", selectedFeeling);
   };
 
-  //   axios
-  //     .post("/orders/", {newName, newAddress, newCity, newZip, newDeliveryMethod})
-  //     .then((response) => {
-  //       console.log('POSTing orders', );
-  //     })
-  //     .catch((err) => console.log("Error in adding new order", err));
-  // };
-
   return (
     <Card className="card" variant="outlined">
       <CardContent>

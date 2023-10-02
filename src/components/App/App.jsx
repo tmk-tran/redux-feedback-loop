@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Link,
   Redirect,
@@ -21,8 +21,6 @@ import Swal from "sweetalert2";
 
 function App() {
   const [feedbackList, setFeedbackList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     getFeedback();
@@ -33,10 +31,8 @@ function App() {
       .get("/form")
       .then((res) => {
         setFeedbackList(res.data);
-        setLoading(false);
       })
       .catch((err) => {
-        setError(err);
         setLoading(false);
       });
   };
@@ -113,7 +109,7 @@ function App() {
           <SuccessPage />
         </Route>
       </Switch>
-      <Redirect to="/" /> {/* Default redirect to the first form */}
+      {/* <Redirect to="/" /> Default redirect to the first form */}
       <div className="nav">
         {/* <Link to="/admin">Admin</Link> */}
         <Link to="/">Home</Link>

@@ -46,7 +46,7 @@ export default function Understanding() {
   const goBack = () => {
     // need event prevent default here???
     console.log("clicked BACK");
-    history.push("/");
+    history.push("/feeling");
   };
 
   return (

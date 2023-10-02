@@ -43,7 +43,7 @@ export default function Comments() {
   const goBack = () => {
     // need event prevent default here???
     console.log("clicked BACK");
-    history.push("/review");
+    history.push("/support");
   };
 
   return (

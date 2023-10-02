@@ -22,6 +22,13 @@ router.post("/", (req, res) => {
   const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                             VALUES ($1, $2, $3, $4)`;
 
+  // back end verification
+  if ((!newData.feeling, !newData.understanding, !newData.support)) {
+    console.log("Missing data in request");
+    res.sendStatus(400);
+    return;
+  }
+
   pool
     .query(queryText, [
       newData.feeling,
@@ -54,6 +61,5 @@ router.delete("/:id", (req, res) => {
       res.sendStatus(500);
     });
 });
-
 
 module.exports = router;

@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 
 import "./Admin.css";
 
@@ -49,10 +52,9 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
               <td>{feedback.support}</td>
               <td>{feedback.comments}</td>
               <td>
-                <button onClick={() => flagItem(feedback.id)}>Flag</button>
-                <button onClick={() => deleteFeedback(feedback.id)}>
-                  Delete
-                </button>
+                <IconButton onClick={() => flagItem(feedback.id)}><FlagOutlinedIcon /></IconButton>
+                <br />
+                <IconButton onClick={() => deleteFeedback(feedback.id)}><DeleteIcon /></IconButton>
               </td>
             </tr>
           ))}

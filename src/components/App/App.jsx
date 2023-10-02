@@ -81,6 +81,8 @@ function App() {
   return (
     <Router>
       <Header />
+      <br />
+      <br />
       <Switch>
         <Route exact path="/admin">
           <Admin
@@ -115,14 +117,14 @@ function App() {
       </Switch>
       <Redirect to="/admin" /> {/* Default redirect to the first form */}
       <div className="nav">
-        <Link to="/admin">Admin</Link>
+        {/* <Link to="/admin">Admin</Link> */}
         <Link to="/">Home</Link>
         <Link to="/feeling">Feeling</Link>
         <Link to="/understanding">Understanding</Link>
         <Link to="/support">Support</Link>
         <Link to="/comments">Comments</Link>
         <Link to="/review">Review</Link>
-        <Link to="/success">Success</Link>
+        {/* <Link to="/success">Success</Link> */}
       </div>
     </Router>
   );

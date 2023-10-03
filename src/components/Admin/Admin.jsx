@@ -113,7 +113,7 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
           <Card style={{ width: "15%", margin: "0 auto" }}>
             <CardContent className="login-card">
               <Typography className="login-head" variant="h5" style={{fontFamily: "monospace"}}>
-                Login
+                Admin Login
               </Typography>
               <br />
               <br />

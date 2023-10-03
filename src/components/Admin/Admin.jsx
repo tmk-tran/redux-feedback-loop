@@ -154,8 +154,8 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
           </div>
         }
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
+          vertical: "top",
+          horizontal: "center",
         }}
         style={{ fontSize: "28px", padding: "20px" }}
       />

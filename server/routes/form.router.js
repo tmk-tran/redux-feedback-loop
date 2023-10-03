@@ -23,11 +23,11 @@ router.post("/", (req, res) => {
                             VALUES ($1, $2, $3, $4)`;
 
   // back end verification
-  // if ((!newData.feeling, !newData.understanding, !newData.support)) {
-  //   console.log("Missing data in request");
-  //   res.sendStatus(400);
-  //   return;
-  // }
+  if ((!newData.feeling, !newData.understanding, !newData.support)) {
+    console.log("Missing data in request");
+    res.sendStatus(400);
+    return;
+  }
 
   pool
     .query(queryText, [

@@ -112,8 +112,8 @@ export default function Admin({ feedbackList, getFeedback, deleteFeedback }) {
         <div className="login-form">
           <Card style={{ width: "15%", margin: "0 auto" }}>
             <CardContent className="login-card">
-              <Typography className="login-head" variant="h3">
-                Hello!
+              <Typography className="login-head" variant="h5" style={{fontFamily: "monospace"}}>
+                Login
               </Typography>
               <br />
               <br />

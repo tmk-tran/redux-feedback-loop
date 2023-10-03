@@ -35,7 +35,7 @@ export default function Review() {
       formData.support === undefined ||
       formData.comments === undefined
     ) {
-      alert("Please fill out all fields");
+      alert("Please go back and fill out all forms!");
       return; // Stop the function if any field is empty
     }
 

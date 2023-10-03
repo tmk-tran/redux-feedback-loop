@@ -40,10 +40,11 @@
 }
 
 .login-head {
-    background-color: rgb(74, 74, 115);
-    border-radius: 5px;
+    background-color: rgb(22, 22, 200);
+    border-radius: 6px;
     color:ghostwhite;
     text-align: center;
+    font-family: monospace;
 }
 
 .login-card {

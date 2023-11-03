@@ -10,13 +10,25 @@ For this assignment, I created a reflection/feedback form modeled after Prime Di
 
 ## Screen Shot
 
-On load, the user should see the following:
+### On load, the user should see the following:
 ![Welcome](image.png)
+
+### First Question:
 ![Question 1](image-1.png)
+
+### Second Question:
 ![Question 2](image-2.png)
+
+### Third Question:
 ![Question 3](image-3.png)
+
+### Comments Page:
 ![Comments Page](image-4.png)
+
+### Review Page:
 ![Review](image-5.png)
+
+### Submission Page:
 ![Submit](image-6.png)
 
 ## Installation

@@ -6,7 +6,7 @@
 
 Week 11 React / Redux
 
-For this assignment, I created a reflection/feedback form modeled after Prime's system. Feedback will be collected over 4 views. In a separate review page, display the current feedback values and a submit button. and when all steps are complete, the app will save the feedback in the database.  
+For this assignment, I created a reflection/feedback form modeled after Prime Digital Academy's system. Feedback will be collected over 4 views. In a separate review page, display the current feedback values and a submit button. and when all steps are complete, the app will save the feedback in the database.  
 
 ## Screen Shot
 

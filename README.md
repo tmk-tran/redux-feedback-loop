@@ -12,6 +12,12 @@ For this assignment, I created a reflection/feedback form modeled after Prime Di
 
 On load, the user should see the following:
 ![Welcome](image.png)
+![Question 1](image-1.png)
+![Question 2](image-2.png)
+![Question 3](image-3.png)
+![Comments Page](image-4.png)
+![Review](image-5.png)
+![Submit](image-6.png)
 
 ## Installation
 Run 'npm run server' in your terminal
